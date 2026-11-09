@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,8 +23,10 @@ jobs:
           gradle-version: '8.9'
 
       - name: Extract project
-        run: |
-          unzip N9_Prototype_0.1_CloudBuild.zip -d extracted
+        run: unzip N9_Prototype_0.1_CloudBuild.zip -d extracted
+
+      - name: Find project
+        run: find extracted -name settings.gradle -o -name settings.gradle.kts
 
       - name: Build APK
         working-directory: extracted/N9
