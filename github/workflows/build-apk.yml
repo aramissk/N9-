@@ -5,24 +5,20 @@ on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
 
-      - name: Extract fixed project
-        run: unzip N9_Prototype_0.1_CloudBuild_FIXED2.zip -d extracted
+      - name: Extract project
+        run: unzip N9_Prototype_0.1_CloudBuild_FIXED3.zip -d extracted
 
       - name: Build APK
         working-directory: extracted/N9
