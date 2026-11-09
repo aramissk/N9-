@@ -1,7 +1,6 @@
 name: Build N9 APK
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -22,11 +21,8 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Extract project
-        run: unzip N9_Prototype_0.1_CloudBuild.zip -d extracted
-
-      - name: Find project
-        run: find extracted -name settings.gradle -o -name settings.gradle.kts
+      - name: Extract fixed project
+        run: unzip N9_Prototype_0.1_CloudBuild_FIXED.zip -d extracted
 
       - name: Build APK
         working-directory: extracted/N9
