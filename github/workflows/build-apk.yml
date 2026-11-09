@@ -18,7 +18,7 @@ jobs:
           gradle-version: '8.9'
 
       - name: Extract project
-        run: unzip N9_Prototype_0.1_CloudBuild_FIXED3.zip -d extracted
+        run: unzip N9_Prototype_0.1_CloudBuild_FIXED4.zip -d extracted
 
       - name: Build APK
         working-directory: extracted/N9
