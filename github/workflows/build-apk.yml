@@ -22,8 +22,8 @@ jobs:
           gradle-version: '8.9'
 
       - name: Extract project
-        run: unzip N9_Prototype_0.2.zip -d extracted
-
+        run: 
+run: unzip N9_Prototype_0.3.zip -d extracted
       - name: Build APK
         working-directory: extracted/N9
         run: gradle assembleDebug
